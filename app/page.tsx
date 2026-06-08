@@ -9,7 +9,8 @@ export default function Home() {
   return (
     <>
       <Navbar />
-  <PageHero eyebrow={"This is how it works"} heading={undefined} description={"Hello"} stats={[]} />
+  {/* <PageHero eyebrow={"This is how it works"} heading={undefined} description={"Hello"} stats={[]} /> */}
+  <PageHero/>
   <Footer />
       {/* <Services />  */}
     </>
