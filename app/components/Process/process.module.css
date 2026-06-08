@@ -1,0 +1,146 @@
+.process {
+  background: var(--nd);
+  padding: 110px var(--gut);
+  position: relative;
+  overflow: hidden;
+}
+
+.process::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(10,80,180,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10,80,180,.03) 1px, transparent 1px);
+  background-size: 70px 70px;
+}
+
+.procIn {
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+.procHdr {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 72px;
+}
+
+.procHdr h2 {
+  font-family: var(--serif);
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 300;
+}
+
+.procHdr h2 em {
+  font-style: italic;
+  color: var(--gv);
+}
+
+.procHdr p {
+  max-width: 280px;
+  font-size: 13px;
+  color: var(--wm);
+  line-height: 1.8;
+  text-align: right;
+}
+
+/* 🔥 ADD THIS (you were missing it) */
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--gv);
+  margin-bottom: 12px;
+}
+
+.procTrack {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.procLine {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  right: 28px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--bv), var(--gv));
+  opacity: .25;
+}
+
+.procLineActive {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--bv), var(--gv));
+  width: 0%;
+  transition: width 1.4s ease;
+  z-index: 1;
+}
+
+.procStep {
+  position: relative;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.procNode {
+  width: 57px;
+  height: 57px;
+  border-radius: 50%;
+  background: var(--ns);
+  border: 1px solid rgba(10,95,255,.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+  z-index: 2;
+}
+
+.procNode svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--lb);
+  fill: none;
+  stroke-width: 1.5;
+}
+
+/* 🔥 FIX: CSS MODULE SAFE STATES */
+.active .procNode {
+  background: rgba(255,116,48,.15);
+  border-color: var(--bv);
+  box-shadow: 0 0 28px rgba(255,116,48,.25);
+}
+
+.done .procNode {
+  background: rgba(0,200,150,.1);
+  border-color: var(--gv);
+}
+
+.procN {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--lb);
+  letter-spacing: .1em;
+  margin-bottom: 8px;
+}
+
+.procT {
+  font-family: var(--serif);
+  font-size: 19px;
+  margin-bottom: 8px;
+  color: var(--w);
+}
+
+.procD {
+  font-size: 12px;
+  color: var(--wm);
+  line-height: 1.65;
+  max-width: 180px;
+}

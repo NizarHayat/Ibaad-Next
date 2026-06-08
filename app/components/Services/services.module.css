@@ -1,0 +1,677 @@
+/* ============================================================
+   SERVICES PAGE — Enhanced CSS with Filters
+   Fixed and improved styling with better animations
+   ============================================================ */
+
+.services {
+  background: var(--obs);
+  padding: 110px var(--gut);
+  position: relative;
+  overflow: hidden;
+}
+
+.services::after {
+  content: '';
+  position: absolute;
+  top: 200px;
+  right: -200px;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,116,48,.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.services::before {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: -150px;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,200,150,.05) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.svcIn {
+  max-width: var(--max);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── TOP SECTION ── */
+.svcTop {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin-bottom: 80px;
+  align-items: end;
+}
+
+.svcTop > div:first-child {
+  animation: fadeUp .8s ease .2s both;
+}
+
+.svcTop > p {
+  animation: fadeUp .8s ease .4s both;
+}
+
+.svcTop h2 {
+  font-family: var(--serif);
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -.02em;
+  color: var(--w);
+  margin-bottom: 16px;
+}
+
+.svcTop h2 em {
+  font-style: italic;
+  color: var(--bp);
+}
+
+.svcTop p {
+  font-size: 15px;
+  color: var(--wm);
+  line-height: 1.85;
+  max-width: 500px;
+}
+
+.svcTop .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.svcTop .eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 40px;
+  height: 1px;
+  background: var(--gv);
+}
+
+/* ── FILTER SECTION ── */
+.filterSection {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 60px;
+  animation: fadeUp .8s ease .6s both;
+  flex-wrap: wrap;
+}
+
+.filterLabel {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--gv);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.filterButtons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  font-family: var(--mono);
+  font-size: 12px;
+  padding: 10px 16px;
+  border: 1.5px solid rgba(255, 127, 64, 0.3);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--gv);
+  cursor: pointer;
+  transition: all .3s cubic-bezier(.4,0,.2,1);
+  letter-spacing: .05em;
+  text-transform: capitalize;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.filterBtn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 127, 64, 0.08);
+  opacity: 0;
+  transition: opacity .3s ease;
+  z-index: -1;
+}
+
+.filterBtn:hover {
+  border-color: rgba(255, 127, 64, 0.6);
+  color: var(--wd);
+  background: rgba(255, 127, 64, 0.1);
+}
+
+.filterBtn:hover::before {
+  opacity: 1;
+}
+
+.filterBtn:focus-visible {
+  outline: 2px solid var(--bv);
+  outline-offset: 2px;
+}
+
+/* ACTIVE STATE */
+.filterBtnActive {
+  background: rgba(255, 116, 48, 0.15);
+  border-color: rgba(255, 116, 48, 0.8);
+  color: var(--w);
+  box-shadow: 0 0 20px rgba(255, 116, 48, 0.3);
+}
+
+.filterBtnActive::before {
+  opacity: 1;
+}
+
+/* ── GRID ── */
+.svcGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5px;
+  background: linear-gradient(90deg, var(--nb) 1px, transparent 1px),
+              linear-gradient(var(--nb) 1px, transparent 1px);
+  background-size: 1.5px 1.5px;
+  background-position: 0 0;
+  padding: 1.5px;
+  border: 1px solid var(--nb);
+}
+
+/* ── NO RESULTS ── */
+.noResults {
+  grid-column: 1 / -1;
+  padding: 60px 40px;
+  text-align: center;
+  border: 1px solid rgba(0,200,150,.2);
+  border-radius: 8px;
+  background: rgba(0,200,150,.03);
+}
+
+.noResults p {
+  font-size: 14px;
+  color: var(--wm);
+  margin: 0;
+}
+
+/* ── CARD ── */
+.svcCard {
+  background: var(--ns);
+  padding: 44px 40px;
+  position: relative;
+  overflow: hidden;
+  transition: all .4s cubic-bezier(.4,0,.2,1);
+  border-bottom: 2px solid transparent;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  animation: fadeUp .6s ease backwards;
+  isolation: isolate;
+}
+
+.svcCard:nth-child(1) { animation-delay: .1s; }
+.svcCard:nth-child(2) { animation-delay: .15s; }
+.svcCard:nth-child(3) { animation-delay: .2s; }
+.svcCard:nth-child(4) { animation-delay: .25s; }
+.svcCard:nth-child(5) { animation-delay: .3s; }
+.svcCard:nth-child(6) { animation-delay: .35s; }
+
+.svcCard:hover {
+  background: var(--nc);
+  border-bottom-color: var(--bv);
+  transform: translateY(-4px);
+}
+
+.svcCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(0,0,0,0.5));
+  opacity: 0;
+  transition: opacity .5s cubic-bezier(.4,0,.2,1);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.svcCard:hover::before {
+  opacity: 1;
+}
+
+.svcCard::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.15);
+  transition: all .6s cubic-bezier(.4,0,.2,1);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.svcCard:hover::after {
+  opacity: 0.6;
+  transform: scale(1);
+}
+
+/* ── CONTENT LAYERS ── */
+.svcNo,
+.svcIco,
+.svcCard h3,
+.svcCard p,
+.svcTags,
+.svcBg {
+  position: relative;
+  z-index: 3;
+}
+
+/* ── NUMBER ── */
+.svcNo {
+  font-family: var(--serif);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--gv);
+  letter-spacing: .15em;
+  margin-bottom: 28px;
+  text-transform: uppercase;
+  opacity: 0.8;
+  transition: opacity .3s ease;
+}
+
+.svcCard:hover .svcNo {
+  opacity: 1;
+  color: var(--w);
+}
+
+/* ── ICON ── */
+.svcIco {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 22px;
+  background: var(--bv);
+  border: 1.5px solid rgba(255,116,48,.3);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--w);
+  transition: all .4s cubic-bezier(.4,0,.2,1);
+  flex-shrink: 0;
+}
+
+.svcIco svg {
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+
+.svcCard:hover .svcIco {
+  background: rgba(255,116,48,.25);
+  border-color: rgba(255,116,48,.5);
+  transform: scale(1.1) rotate(-5deg);
+  box-shadow: 0 0 25px rgba(255,116,48,0.2);
+}
+
+/* ── TITLE ── */
+.svcCard h3 {
+  font-family: var(--serif);
+  font-size: 23px;
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--w);
+  margin-bottom: 14px;
+  letter-spacing: -.01em;
+  transition: color .3s ease;
+}
+
+.svcCard:hover h3 {
+  color: var(--gv);
+}
+
+/* ── DESCRIPTION ── */
+.svcCard p {
+  font-size: 13px;
+  color: var(--wm);
+  line-height: 1.7;
+  margin-bottom: 26px;
+  flex: 1;
+  transition: color .3s ease;
+}
+
+.svcCard:hover p {
+  color: var(--wd);
+}
+
+/* ── TAGS ── */
+.svcTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.svcTag {
+  font-family: var(--mono);
+  font-size: 10px;
+  padding: 6px 12px;
+  border: 1px solid rgba(255, 127, 64, 0.25);
+  border-radius: 4px;
+  color: var(--gv);
+  background: rgba(255, 127, 64, 0.08);
+  transition: all .3s ease;
+  letter-spacing: .05em;
+  text-transform: capitalize;
+}
+
+.svcCard:hover .svcTag {
+  border-color: rgba(255, 127, 64, 0.5);
+  background: rgba(255, 127, 64, 0.15);
+  color: var(--gv);
+}
+
+/* ── BACKGROUND NUMBER ── */
+.svcBg {
+  position: absolute;
+  bottom: -20px;
+  right: 8px;
+  font-family: var(--serif);
+  font-size: 120px;
+  font-weight: 300;
+  line-height: 1;
+  color: rgba(255,116,48,.04);
+  pointer-events: none;
+  transition: color .4s ease;
+}
+
+.svcCard:hover .svcBg {
+  color: rgba(255,116,48,.08);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1200px) {
+  .svcGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .svcTop {
+    gap: 60px;
+  }
+
+  .svcCard {
+    min-height: 260px;
+    padding: 36px 32px;
+  }
+
+  .filterSection {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .services {
+    padding: 80px var(--gut);
+  }
+
+  .svcTop {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+  }
+
+  .svcTop p {
+    max-width: 100%;
+  }
+
+  .svcGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .svcCard {
+    min-height: 240px;
+    padding: 32px 28px;
+  }
+
+  .svcCard h3 {
+    font-size: 20px;
+  }
+
+  .svcCard p {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+
+  .svcNo {
+    margin-bottom: 20px;
+  }
+
+  .svcIco {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 16px;
+  }
+
+  .svcBg {
+    font-size: 90px;
+    bottom: -10px;
+  }
+
+  .filterBtn {
+    font-size: 11px;
+    padding: 8px 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services {
+    padding: 80px var(--gut);
+  }
+
+  .svcTop {
+    margin-bottom: 50px;
+  }
+
+  .svcTop h2 {
+    font-size: clamp(28px, 6vw, 48px);
+    line-height: 1.1;
+  }
+
+  .svcGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+  }
+
+  .svcCard {
+    min-height: 220px;
+    padding: 28px 24px;
+  }
+
+  .svcCard h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .svcCard p {
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
+
+  .svcIco {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 12px;
+  }
+
+  .svcTag {
+    font-size: 9px;
+    padding: 5px 10px;
+  }
+
+  .svcNo {
+    font-size: 10px;
+    margin-bottom: 16px;
+  }
+
+  .svcBg {
+    font-size: 70px;
+    opacity: 0.5;
+  }
+
+  .filterSection {
+    margin-bottom: 50px;
+    gap: 16px;
+  }
+
+  .filterBtn {
+    font-size: 10px;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .services {
+    padding: 60px var(--gut);
+  }
+
+  .svcTop .eyebrow::before {
+    display: none;
+  }
+
+  .svcTop h2 {
+    font-size: clamp(24px, 5vw, 36px);
+    margin-bottom: 12px;
+  }
+
+  .svcTop p {
+    font-size: 14px;
+  }
+
+  .svcGrid {
+    grid-template-columns: 1fr;
+    gap: 1px;
+  }
+
+  .svcCard {
+    min-height: auto;
+    padding: 24px 20px;
+  }
+
+  .svcCard h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .svcCard p {
+    font-size: 12px;
+    margin-bottom: 14px;
+    line-height: 1.6;
+  }
+
+  .svcIco {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 10px;
+  }
+
+  .svcNo {
+    font-size: 9px;
+    margin-bottom: 12px;
+  }
+
+  .svcTags {
+    gap: 4px;
+  }
+
+  .svcTag {
+    font-size: 8px;
+    padding: 4px 8px;
+  }
+
+  .svcBg {
+    font-size: 60px;
+    bottom: -15px;
+    right: 4px;
+  }
+
+  .svcCard:hover {
+    transform: translateY(-2px);
+  }
+
+  .svcCard::after {
+    transform: scale(1.2);
+  }
+
+  .svcCard:hover::after {
+    transform: scale(1);
+  }
+
+  /* Mobile filter adjustments */
+  .filterSection {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .filterLabel {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .filterButtons {
+    width: 100%;
+    gap: 8px;
+  }
+
+  .filterBtn {
+    font-size: 9px;
+    padding: 7px 10px;
+  }
+}
+
+/* ── ACCESSIBILITY ── */
+.svcCard:focus-visible {
+  outline: 2px solid var(--bv);
+  outline-offset: -2px;
+}
+
+/* ── ANIMATION UTILITIES ── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .svcCard,
+  .svcCard::before,
+  .svcCard::after,
+  .svcIco,
+  .svcNo,
+  .svcTop > div:first-child,
+  .svcTop > p,
+  .filterBtn,
+  .filterSection {
+    animation: none !important;
+    transition: none !important;
+  }
+}

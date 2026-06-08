@@ -1,0 +1,260 @@
+/* =========================
+   HERO
+========================= */
+.hero {
+  padding: 160px var(--gut) 100px;
+  background: var(--obs);
+}
+
+.heroInner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: end;
+}
+
+.kicker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.line {
+  width: 40px;
+  height: 1px;
+  background: var(--bv);
+}
+
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(48px, 7vw, 96px);
+  font-weight: 300;
+  line-height: 0.95;
+  color: var(--w);
+}
+
+.hero h1 em {
+  color: var(--gv);
+  font-style: italic;
+}
+
+.heroRight p {
+  color: var(--wd);
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+/* =========================
+   STATS
+========================= */
+.stats {
+  display: flex;
+  gap: 28px;
+}
+
+.stats div div {
+  font-family: var(--serif);
+  font-size: 34px;
+  color: var(--bv);
+}
+
+.stats span {
+  font-size: 11px;
+  color: var(--wm);
+  text-transform: uppercase;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+.section {
+  padding: 80px var(--gut);
+}
+
+.section h2 {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 300;
+  margin-bottom: 24px;
+  color: var(--w);
+}
+
+.section h2 em {
+  color: var(--gv);
+}
+
+/* =========================
+   GRIDS
+========================= */
+.grid2 {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+}
+
+.grid3 {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* =========================
+   CARD
+========================= */
+.card {
+  background: var(--nm);
+  border: 1px solid var(--wf);
+  padding: 24px;
+}
+
+.card h3 {
+  font-family: var(--serif);
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: var(--w);
+}
+
+.card p,
+.card li {
+  color: var(--wm);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.card li {
+  margin-bottom: 8px;
+  padding-left: 16px;
+  position: relative;
+}
+
+.card li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--bv);
+}
+
+/* =========================
+   CTA
+========================= */
+.cta {
+  padding: 80px var(--gut);
+  background: var(--obs);
+  border-top: 1px solid var(--wf);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cta h2 {
+  font-family: var(--serif);
+  font-size: 40px;
+  font-weight: 300;
+  color: var(--w);
+}
+
+.cta h2 em {
+  color: var(--gv);
+}
+
+.cta p {
+  color: var(--wm);
+  margin-top: 10px;
+}
+
+/* CTA BUTTONS */
+.ctaActions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btnPrimary {
+  background: var(--bv);
+  color: #fff;
+  padding: 12px 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.btnGhost {
+  border: 1px solid var(--wf);
+  color: var(--w);
+  padding: 12px 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+  padding: 40px var(--gut);
+  border-top: 1px solid var(--wf);
+  background: var(--obs);
+}
+
+.footer h4 {
+  font-family: var(--serif);
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: var(--w);
+}
+
+.footer p {
+  color: var(--wm);
+  font-size: 13px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1024px) {
+  .heroInner,
+  .grid2 {
+    grid-template-columns: 1fr;
+  }
+
+  .stats {
+    flex-direction: column;
+  }
+
+  .cta {
+    flex-direction: column;
+    text-align: center;
+    gap: 24px;
+  }
+
+  .grid3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 120px 16px 60px;
+  }
+
+  .section {
+    padding: 50px 16px;
+  }
+
+  .cta h2 {
+    font-size: 28px;
+  }
+}
