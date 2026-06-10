@@ -513,7 +513,7 @@ export default function ServicesPage() {
       {/* Process Section */}
       <section className={styles['proc-strip']}>
         <div className={styles['proc-strip-in']}>
-          <div className={[styles['proc-strip-hdr'], 'reveal'].join(' ')}>
+          <div className={[styles['proc-strip-hdr'], 'reveal'].join(' ')} data-reveal="true">
             <div className={styles['eyebrow']}>How It Works</div>
             <h2>Our Simple <em>Process</em></h2>
           </div>
@@ -540,7 +540,7 @@ export default function ServicesPage() {
 {/* FAQ Section - FIXED */}
 <section className={styles['faq-section']}>
   <div className={styles['faq-in']}>
-    <div className={styles['faq-hdr']} reveal="true">
+    <div className={styles['faq-hdr']} data-reveal="true">
       <div className={styles['eyebrow']}>Common Questions</div>
       <h2>Services <em>FAQ</em></h2>
     </div>

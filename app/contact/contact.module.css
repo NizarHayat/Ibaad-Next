@@ -163,6 +163,8 @@
   padding: 12px 14px;
   background: var(--nm);
   border: 1px solid var(--wf);
+  /* color: var(--w); */
+  
   color: var(--w);
   font-family: var(--sans);
   font-size: 13px;
@@ -174,7 +176,11 @@
 .formRow textarea::placeholder {
   color: var(--wm);
 }
-
+/*  CORRECT SYNTAX */
+.formRow select option {
+  background: var(--nm);
+  color: var(--w); 
+}
 .formRow input:focus,
 .formRow select:focus,
 .formRow textarea:focus {

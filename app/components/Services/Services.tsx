@@ -247,7 +247,7 @@ export default function Services({ activeFilter: heroFilter }: ServicesProps) {
         {/* NO RESULTS MESSAGE */}
         {filteredServices.length === 0 && (
           <div className={styles.noResults}>
-            <p>No services found for "{activeFilter}". Try another category.</p>
+            <p>No services found for `<strong>{activeFilter}</strong>`. Try another category.</p>
           </div>
         )}
       </div>
