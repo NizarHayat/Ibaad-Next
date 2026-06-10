@@ -513,13 +513,17 @@ export default function ServicesPage() {
       {/* Process Section */}
       <section className={styles['proc-strip']}>
         <div className={styles['proc-strip-in']}>
-          <div className={styles['proc-strip-hdr']} reveal="true">
+          <div className={[styles['proc-strip-hdr'], 'reveal'].join(' ')}>
             <div className={styles['eyebrow']}>How It Works</div>
             <h2>Our Simple <em>Process</em></h2>
           </div>
           <div className={styles['proc-steps']}>
             {processSteps.map((s, i) => (
-              <div className={styles['proc-step-item']} reveal key={i}>
+          <div
+  className={styles['proc-step-item']}
+  data-reveal="true"
+  key={i}
+>
                 <div className={styles['proc-node-wrap']}>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">{s.icon}</svg>
                 </div>
