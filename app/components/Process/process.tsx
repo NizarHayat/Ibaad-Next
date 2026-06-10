@@ -216,10 +216,11 @@ export default function Process() {
               }`}
             >
               <div className={styles.procNode}>{step.icon}</div>
-
+              <div>
               <div className={styles.procN}>{step.id} / {step.title}</div>
               <div className={styles.procT}>{step.subtitle}</div>
               <div className={styles.procD}>{step.desc}</div>
+              </div>
             </div>
           ))}
         </div>
